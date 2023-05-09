@@ -222,11 +222,9 @@ function updateBook(id, modifiedParams)
 
 function getNewRating(book, userId, rating)
 {
-    const ratings = book.ratings.filter(r => r.userId !== userId)
-    
-    ratings.push({ userId: userId, grade: rating })
-
-    const averageRating = ratings.reduce((accumulateur, r) => accumulateur += r.grade, 0) / ratings.length
+    const
+    ratings = [...book.ratings.filter(r => r.userId !== userId), { userId: userId, grade: rating }],
+    averageRating = ratings.reduce((accumulateur, r) => accumulateur += r.grade, 0) / ratings.length
 
     book.ratings = ratings
     book.averageRating = Math.round(averageRating*10) / 10

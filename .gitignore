@@ -1,2 +1,4 @@
+#ignore les images & dépendences
+
 images/*
 node_modules
