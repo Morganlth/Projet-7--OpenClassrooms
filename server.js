@@ -1,11 +1,16 @@
 // #REQUIRES
 
 const
+checkImageFolder = require('./utils').checkImageFolder,
 express = require('express'),
 mongoose = require('mongoose'),
 path = require('path'),
 router = require('./router'),
 setHeaders = require('./utils').setHeaders
+
+// #TEST
+
+checkImageFolder() //verifie si le dossier './images' exist / si non il le crée
 
 // #CONSTANTE
 

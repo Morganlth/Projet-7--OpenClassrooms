@@ -1,4 +1,15 @@
+// #REQUIRE
+
+const fs = require('fs')
+
 // #EXPORTS
+
+exports.checkImageFolder = () =>
+{
+    const path = './images'
+
+    if (!fs.existsSync(path)) fs.mkdirSync(path)
+}
 
 exports.setHeaders = (req, res, next) =>
 {
