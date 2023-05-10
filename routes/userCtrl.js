@@ -14,7 +14,7 @@ errorManager = require('../utils').errorManager
 
 module.exports =
 {
-    signup: async (req, res) =>
+    signup: (req, res) =>
     {
         asyncLib.waterfall(
         [

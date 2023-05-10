@@ -37,7 +37,7 @@ app.use(setHeaders)
         console.log('Connexion à MongoDB échouée !')
 
         // routes fermées car database indisponible (si indisponible merci de rapidement me contacter par email)
-        app.use('/api', (req, res) => res.status(503).json({ message: 'database inaccessible !' }))
+        app.use('/api' || '/images', (req, res) => res.status(503).json({ message: 'database inaccessible !' }))
     })
 
 // #START-LISTEN
