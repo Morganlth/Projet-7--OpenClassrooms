@@ -36,11 +36,11 @@ app.use(setHeaders)
     {
         console.log('Connexion à MongoDB échouée !')
 
-        const func = (req, res) => res.status(503).json({ message: 'database inaccessible !' })
+        const funcErr = (req, res) => res.status(503).json({ message: 'database inaccessible !' })
 
         // routes fermées car database indisponible (si indisponible merci de rapidement me contacter par email)
-        app.use('/api', func)
-        app.use('/images', func)
+        app.use('/api', funcErr)
+        app.use('/images', funcErr)
     })
 
 // #START-LISTEN
